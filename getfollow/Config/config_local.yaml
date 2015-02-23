@@ -1,0 +1,11 @@
+Get_Follow:
+  Instagram:
+    Access_Token_Request_URL: aHR0cHM6Ly9hcGkuaW5zdGFncmFtLmNvbS9vYXV0aC9hY2Nlc3NfdG9rZW4=
+    Client_ID: YWExNzVhNmRmY2U3NDQ3ZjliNjJjNjkzOTc4MzY3Yjk=
+    Client_Secret: YTRjZjk0ZDBiYjJmNDNiMzgwYzc2OTlmZmQyNjIxMTk=
+    Redirect_Uri: aHR0cDovL3d3dy5pZmx5c2hhZG93LmNvbS9pbnN0YWdyYW0vbWljcm9mb2xsb3cvb2F1dGg=
+MySql:
+  Host: bG9jYWxob3N0
+  Password: ODAwMTA4alY=
+  Schema: Z2V0Zm9sbG93
+  User: c2hhcnA=
