@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import *
 
@@ -11,6 +12,6 @@ class Invoice(Base):
     }
     id = Column(INTEGER, autoincrement=True, primary_key=True)
     mid = Column(INTEGER, index=True)
-    invoice_type = Column(NVARCHAR(25))
+    invoice_type = Column(VARCHAR(25))
     amount = Column(DECIMAL(10, 2))
-    date_time = Column(INTEGER, index=True)
+    date_time = Column(BIGINT, index=True)

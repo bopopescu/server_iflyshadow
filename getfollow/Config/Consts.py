@@ -3,7 +3,7 @@ import os
 from sqlalchemy import *
 
 BASE_DIR = os.path.dirname(__file__)
-GLOBAL_CONFIG_FILE = BASE_DIR + "/config_local.yaml"
+GLOBAL_CONFIG_FILE = BASE_DIR + "/config_server.yaml"
 import GetFollowConfig
 import MySqlConfig
 

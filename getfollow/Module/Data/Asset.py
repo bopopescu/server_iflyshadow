@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import *
 
@@ -12,9 +13,9 @@ class Asset(Base):
 
     id = Column(INTEGER, autoincrement=True, primary_key=True)
     mid = Column(INTEGER, index=True)
-    type = Column(NVARCHAR(25))
+    type = Column(VARCHAR(25))
     amount = Column(DECIMAL(10, 2))
-    expire_time = Column(INTEGER)
-    date_time = Column(INTEGER)
+    expire_time = Column(BIGINT)
+    date_time = Column(BIGINT)
 
 
