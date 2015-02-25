@@ -30,6 +30,7 @@ pip install six
 pip install simplejson
 pip install pyOpenSSL
 pip install apns-client
+pip install celery
 #=====================upgrade===================
 pip install flask --upgrade
 pip install flask-mail --upgrade
@@ -59,3 +60,4 @@ pip install six --upgrade
 pip install simplejson --upgrade
 pip install pyOpenSSL --upgrade
 pip install apns-client --upgrade
+pip install celery --upgrade

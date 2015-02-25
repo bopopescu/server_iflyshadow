@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c716d30-5f61-490d-80ad-6811e2e2300f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/getfollow/Module/APNS/final_aps_development.pem" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/mysqlclient-1.3.5-py2.7.egg-info/PKG-INFO" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/mysqlclient-1.3.5-py2.7.egg-info/SOURCES.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/mysqlclient-1.3.5-py2.7.egg-info/dependency_links.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/mysqlclient-1.3.5-py2.7.egg-info/installed-files.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/mysqlclient-1.3.5-py2.7.egg-info/pbr.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/mysqlclient-1.3.5-py2.7.egg-info/top_level.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/_mysql.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/_mysql.so" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getfollow/Module/APNS/APushService.py" afterPath="$PROJECT_DIR$/getfollow/Module/APNS/APushService.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/MySQLdb/__init__.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/MySQLdb/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/MySQLdb/connections.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/MySQLdb/connections.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/MySQLdb/converters.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/MySQLdb/converters.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/MySQLdb/cursors.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/MySQLdb/cursors.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/MySQLdb/release.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/MySQLdb/release.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/apnsclient/backends/stdio.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/apnsclient/backends/stdio.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/MySQLdb/times.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/MySQLdb/times.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create_flask_env.sh" afterPath="$PROJECT_DIR$/create_flask_env.sh" />
     </list>
     <ignored path="getFollow.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,11 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="APushService.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="APushService.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getfollow/Module/APNS/APushService.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6523605" vertical-offset="0" max-vertical-offset="1387">
+            <state vertical-scroll-proportion="-8.142858" vertical-offset="0" max-vertical-offset="1387">
               <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_flask_env.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/create_flask_env.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.72786456" vertical-offset="524" max-vertical-offset="1292">
+              <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -113,7 +106,6 @@
         <option value="$PROJECT_DIR$/iflyshadow/Module/Data/Enum.py" />
         <option value="$PROJECT_DIR$/pystray_uwsgi.ini" />
         <option value="$PROJECT_DIR$/getfollow/Module/Type/Enum.py" />
-        <option value="$PROJECT_DIR$/create_flask_env.sh" />
         <option value="$PROJECT_DIR$/getfollow/Module/Data/MainAccount.py" />
         <option value="$PROJECT_DIR$/getfollow/Module/Data/Invoice.py" />
         <option value="$PROJECT_DIR$/getfollow/Module/Data/Asset.py" />
@@ -129,6 +121,7 @@
         <option value="$PROJECT_DIR$/venv/lib/python2.7/site-packages/OpenSSL/SSL.py" />
         <option value="$PROJECT_DIR$/venv/lib/python2.7/site-packages/apnsclient/backends/stdio.py" />
         <option value="$PROJECT_DIR$/getfollow/Module/APNS/APushService.py" />
+        <option value="$PROJECT_DIR$/create_flask_env.sh" />
       </list>
     </option>
   </component>
@@ -182,6 +175,46 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="venv">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="iflyshadow">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="venv">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="lib/python2.7">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="iflyshadow">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="venv">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="lib/python2.7">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="site-packages">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -814,13 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create_flask_env.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="361" max-vertical-offset="1254">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/site-packages/apns_client-0.2.1-py2.7.egg-info/SOURCES.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="475">
@@ -1085,8 +1111,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getfollow/Module/APNS/APushService.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6523605" vertical-offset="0" max-vertical-offset="1387">
+        <state vertical-scroll-proportion="-8.142858" vertical-offset="0" max-vertical-offset="1387">
           <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_flask_env.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72786456" vertical-offset="524" max-vertical-offset="1292">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
           <folding />
         </state>
       </provider>
