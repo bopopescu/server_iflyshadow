@@ -18,7 +18,7 @@ def not_found(error):
     return Util.create_response(code=404, error=request.url+',Page not found.')
 
 
-@app.route('/instagram/microfollow/oauth/', methods=['GET'])
+@app.route('/instagram/microfollow/oauth', methods=['GET'])
 def oauth():
     return InstagramOAuth.exchange_for_access_token()
 
@@ -31,3 +31,4 @@ def show_post(post_id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
