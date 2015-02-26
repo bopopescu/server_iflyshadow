@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/getFollow.iml" filepath="$PROJECT_DIR$/.idea/getFollow.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../iflyshadow/.idea/getFollow.iml" filepath="$PROJECT_DIR$/../iflyshadow/.idea/getFollow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/iflyshadow.iml" filepath="$PROJECT_DIR$/.idea/iflyshadow.iml" />
     </modules>
   </component>
 </project>
