@@ -32,7 +32,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/sharp/Workspace/python/Pycharm/iflyshadow/venv"
+set -gx VIRTUAL_ENV "/Users/sharp/Python/workspace/getFollow/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
