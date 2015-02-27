@@ -2,7 +2,6 @@
 import base64
 
 from yaml import load
-
 from Consts import *
 
 
@@ -44,12 +43,13 @@ class MySqlConfig():
 
     def set_config(self, data_map):
         print "Mysql Config ---"
+        print self.HOST, self.USER, self.PASSWORD, self.SCHEMA
         self.HOST = raw_input(self.KEY_HOST + ":")  # "ideastraysql.cvl6s0er3syb.us-west-2.rds.amazonaws.com"
         self.USER = raw_input(self.KEY_USER + ":")
         self.PASSWORD = raw_input(self.KEY_PASSWORD + ":")
         self.SCHEMA = raw_input(self.KEY_SCHEMA + ":")
 
-        if len(self.HOST) > 0 or len(self.USER) > 0 or len(self.PASSWORD):
+        if len(self.HOST) > 0 or len(self.USER) > 0 or len(self.PASSWORD) > 0:
             mysql_dic = dict()
             mysql_dic[self.KEY_HOST] = base64.b64encode(self.HOST)
             mysql_dic[self.KEY_USER] = base64.b64encode(self.USER)

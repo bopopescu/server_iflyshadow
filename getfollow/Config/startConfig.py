@@ -19,6 +19,9 @@ MYSQL_CONFIG.set_config(dataMap)
 # 2. GetFollow
 GET_FOLLOW_CONFIG.set_config(dataMap)
 
+# 3. Security
+SECURITY_CONFIG.set_config(dataMap)
+
 # 10. save yaml
 f = open(GLOBAL_CONFIG_FILE, "w")
 dump(dataMap, f, default_flow_style=False)

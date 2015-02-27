@@ -17,13 +17,13 @@ class InstagramOAuth(object):
     def exchange_for_access_token():
         if request.method != 'GET':
             return Util.create_response(code=400, error='Error_request_method.')
-        # 1. get code error
-        error = request.args.get('error')
-        if error is not None:
-            error_reason = request.args.get('error_reason')
-            error_description = request.args.get('error_description')
-            return Util.create_response(code=511,
-                                        error='Get_igm_code_error:' + error + ',' + error_reason + ',' + error_description)
+        # # 1. get code error
+        # error = request.args.get('error')
+        # if error is not None:
+        #     error_reason = request.args.get('error_reason')
+        #     error_description = request.args.get('error_description')
+        #     return Util.create_response(code=511,
+        #                                 error='Get_igm_code_error:' + error + ',' + error_reason + ',' + error_description)
 
         # 2. get code && exchange access_token
         code = request.args.get('code')
@@ -81,3 +81,11 @@ class InstagramOAuth(object):
             err_info = "OAuth Error %s" % (e.args[0])
             print(err_info)
             return Util.create_response(code=512, error=err_info)
+
+from Crypto.Cipher import AES
+obj = AES.new('WERDFS$#@#$%', AES.MODE_CBC, 'This is an IV456')
+message = '''One possible application of the modules is writing secure administration tools. Another application is in writing daemons and servers. Clients and servers can encrypt the data being exchanged and mutually authenticate themselves; daemons can encrypt private data for added security. Python also provides a pleasant framework for prototyping and experimentation with cryptographic algorithms; thanks to its arbitrary-length integers, public key algorithms are easily implemented.'''
+ciphertext = obj.encrypt(message)
+print ciphertext
+obj2 = AES.new('This is a key123', AES.MODE_CBC, 'This is an IV456')
+print obj2.decrypt(ciphertext)

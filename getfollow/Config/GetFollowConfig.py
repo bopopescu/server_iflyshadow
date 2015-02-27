@@ -49,13 +49,14 @@ class GetFollowConfig():
 
     def set_config(self, data_map):
         print "Get Follow Config ---"
+        print self.CLIENT_ID, self.CLIENT_SECRET,self.REDIRECT_URI,self.ACCESS_TOKEN_REQUEST_URI
         self.CLIENT_ID = raw_input(self.KEY_CLIENT_ID + ":")  # "ideastraysql.cvl6s0er3syb.us-west-2.rds.amazonaws.com"
         self.CLIENT_SECRET = raw_input(self.KEY_CLIENT_SECRET + ":")
         self.REDIRECT_URI = raw_input(self.KEY_REDIRECT_URI + ":")
         self.ACCESS_TOKEN_REQUEST_URI = raw_input(self.KEY_ACCESS_TOKEN_REQUEST_URI + ":")
 
         if len(self.CLIENT_ID) > 0 or len(self.CLIENT_SECRET) > 0 or len(self.REDIRECT_URI) or len(
-                self.ACCESS_TOKEN_REQUEST_URI):
+                self.ACCESS_TOKEN_REQUEST_URI) > 0:
             get_follow_instagram_dic = dict()
             get_follow_instagram_dic[self.KEY_CLIENT_ID] = base64.b64encode(self.CLIENT_ID)
             get_follow_instagram_dic[self.KEY_CLIENT_SECRET] = base64.b64encode(self.CLIENT_SECRET)

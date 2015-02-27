@@ -39,7 +39,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/sharp/Python/workspace/getFollow/venv"
+VIRTUAL_ENV="/Users/sharp/Workspace/python/Pycharm/iflyshadow/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
