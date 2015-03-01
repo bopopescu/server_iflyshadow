@@ -5,7 +5,7 @@ from json import *
 from flask import *
 from Crypto.Cipher import AES
 from Crypto import Random
-
+from getfollow.Config.Consts import *
 
 class Util(object):
     @staticmethod
@@ -28,9 +28,8 @@ class Util(object):
         block_size = AES.block_size
         pad = lambda s: s + (block_size - len(s) % block_size) * chr(block_size - len(s) % block_size)
         unpad = lambda s: s[0:-ord(s[-1])]
-        key = Random.new().read(16)  # the length can be (16, 24, 32)
-        print(key)
-        cipher = AES.new(key)
+        print(SECURITY_CONFIG.AES_KEY)
+        cipher = AES.new(SECURITY_CONFIG.AES_KEY)
         encrypted = cipher.encrypt(pad(data)).encode('hex')
         print encrypted  # will be something like 'f456a6b0e54e35f2711a9fa078a76d16'
 
@@ -42,15 +41,11 @@ class Util(object):
         block_size = AES.block_size
         pad = lambda s: s + (block_size - len(s) % block_size) * chr(block_size - len(s) % block_size)
         unpad = lambda s: s[0:-ord(s[-1])]
-        key = Random.new().read(16)  # the length can be (16, 24, 32)
-        print(key)
-        cipher = AES.new(key)
+        print(SECURITY_CONFIG.AES_KEY)
+        cipher = AES.new(SECURITY_CONFIG.AES_KEY)
         encrypted = cipher.encrypt(pad(data)).encode('hex')
         print encrypted  # will be something like 'f456a6b0e54e35f2711a9fa078a76d16'
 
         decrypted = unpad(cipher.decrypt(encrypted.decode('hex')))
         print decrypted  # will be 'to be encrypted'
 
-
-data = '''cao ni ma'''
-Util.encrypt(data)

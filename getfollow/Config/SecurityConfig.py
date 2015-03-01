@@ -9,7 +9,7 @@ class SecurityConfig():
     KEY_SECURITY = "Security"
     KEY_AES_KEY = "AES_Key"
 
-    AES_KEY = "ithinkicanfly!(@*#&$^"
+    AES_KEY = "*icanfly!(@*#&$^"
 
     def __init__(self):
         self.load_config()

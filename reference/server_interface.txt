@@ -1,6 +1,14 @@
 
 1.  /instagram/microfollow/oauth/
 
+    input :
+        code
+        user_name
+        password
+        device_token
+
+
+    output:
     {
         "code": 511,
         "data": "error_description"
