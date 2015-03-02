@@ -5,7 +5,6 @@ import time
 
 import simplejson
 from httplib2 import Http
-from getfollow.Config.Consts import *
 from sqlalchemy.orm import sessionmaker
 from getfollow.Module.Data.MainAccount import *
 from getfollow.Module.Data.InstagramAccount import *
@@ -15,12 +14,12 @@ from getfollow.Module.Utils.Util import *
 class InstagramOAuth(object):
     @staticmethod
     def exchange_for_access_token():
-        if request.method != 'GET':
+        if request.method != 'POST':
             return Util.create_response(code=400, error='Error_request_method.')
         # # 1. get code error
         # error = request.args.get('error')
         # if error is not None:
-        #     error_reason = request.args.get('error_reason')
+        # error_reason = request.args.get('error_reason')
         #     error_description = request.args.get('error_description')
         #     return Util.create_response(code=511,
         #                                 error='Get_igm_code_error:' + error + ',' + error_reason + ',' + error_description)
@@ -54,7 +53,7 @@ class InstagramOAuth(object):
         print content_json
         try:
             # 4.1 merge MainAccount or add
-            main_account = MainAccount(last_access_time=int(time.time() * 1000), ip_address=request.remote_addr)
+            main_account = MainAccount(last_access_time=int(time.time() * 1000), ip_address=request.headers.get('X-Real-Ip', request.remote_addr))
             insta_account_has_existed = my_session.query(InstagramAccount).filter(
                 InstagramAccount.uid == insta_user['id']).first()
             if insta_account_has_existed is not None:
@@ -81,6 +80,7 @@ class InstagramOAuth(object):
             err_info = "OAuth Error %s" % (e.args[0])
             print(err_info)
             return Util.create_response(code=512, error=err_info)
+
 
 data = '''cao ni ma'''
 Util.encrypt(data)
