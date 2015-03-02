@@ -4,7 +4,6 @@ from json import *
 
 from flask import *
 from Crypto.Cipher import AES
-from Crypto import Random
 from getfollow.Config.Consts import *
 
 class Util(object):

@@ -9,7 +9,7 @@ class SecurityConfig():
     KEY_SECURITY = "Security"
     KEY_AES_KEY = "AES_Key"
 
-    AES_KEY = "*icanfly!(@*#&$^"
+    AES_KEY = ""
 
     def __init__(self):
         self.load_config()
@@ -34,7 +34,7 @@ class SecurityConfig():
 
     def set_config(self, data_map):
         print "Security Config ---"
-        print self.AES_KEY
+        print self.AES_KEY #*icanfly!(@*#&$^
         self.AES_KEY = raw_input(self.KEY_AES_KEY + ":")
 
         if len(self.AES_KEY) > 0:
