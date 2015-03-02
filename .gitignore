@@ -9,7 +9,6 @@ common ignore files
 *.bak
 .svn/
 *.pyc
-.idea/
 
 Mac files
 .DS_Store
