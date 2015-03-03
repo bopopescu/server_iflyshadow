@@ -13,6 +13,19 @@ from getfollow.Module.Utils.Util import *
 
 class InstagramOAuth(object):
     @staticmethod
+    def process_oauth():
+        if request.method != 'POST':
+            return Util.create_response(code=400, error='Error_request_method.')
+
+        # server auth mode
+        if 'code' in request.form:
+            print request.form.get('code')
+            return InstagramOAuth.exchange_for_access_token()
+        else:
+            print request.form
+
+
+    @staticmethod
     def exchange_for_access_token():
         if request.method != 'POST':
             return Util.create_response(code=400, error='Error_request_method.')
@@ -20,12 +33,14 @@ class InstagramOAuth(object):
         # error = request.args.get('error')
         # if error is not None:
         # error_reason = request.args.get('error_reason')
-        #     error_description = request.args.get('error_description')
-        #     return Util.create_response(code=511,
-        #                                 error='Get_igm_code_error:' + error + ',' + error_reason + ',' + error_description)
+        # error_description = request.args.get('error_description')
+        # return Util.create_response(code=511,
+        # error='Get_igm_code_error:' + error + ',' + error_reason + ',' + error_description)
 
         # 2. get code && exchange access_token
-        code = request.args.get('code')
+
+        code = request.form.get('code')
+
         client_params = {
             "client_id": GET_FOLLOW_CONFIG.CLIENT_ID,
             "client_secret": GET_FOLLOW_CONFIG.CLIENT_SECRET,
@@ -34,7 +49,6 @@ class InstagramOAuth(object):
             "code": code
         }
         data = urllib.urlencode(client_params)
-
         http_object = Http(disable_ssl_certificate_validation=True)
         response, content = http_object.request(GET_FOLLOW_CONFIG.ACCESS_TOKEN_REQUEST_URI, method="POST",
                                                 body=data)
@@ -53,7 +67,8 @@ class InstagramOAuth(object):
         print content_json
         try:
             # 4.1 merge MainAccount or add
-            main_account = MainAccount(last_access_time=int(time.time() * 1000), ip_address=request.headers.get('X-Real-Ip', request.remote_addr))
+            main_account = MainAccount(last_access_time=int(time.time() * 1000),
+                                       ip_address=request.headers.get('X-Real-Ip', request.remote_addr))
             insta_account_has_existed = my_session.query(InstagramAccount).filter(
                 InstagramAccount.uid == insta_user['id']).first()
             if insta_account_has_existed is not None:
@@ -81,6 +96,3 @@ class InstagramOAuth(object):
             print(err_info)
             return Util.create_response(code=512, error=err_info)
 
-
-data = '''cao ni ma'''
-Util.encrypt(data)

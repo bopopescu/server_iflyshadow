@@ -15,12 +15,12 @@ def index():
 
 @app.errorhandler(404)
 def not_found(error):
-    return Util.create_response(code=404, error=request.url+',Page not found.')
+    return Util.create_response(code=404, error=request.url + ',Page not found.')
 
 
 @app.route('/instagram/microfollow/oauth', methods=['POST'])
 def oauth():
-    return InstagramOAuth.exchange_for_access_token()
+    return InstagramOAuth.process_oauth()
 
 
 @app.route('/post/<int:post_id>')
