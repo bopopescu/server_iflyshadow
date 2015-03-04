@@ -6,13 +6,13 @@ from sqlalchemy.dialects.mysql import *
 Base = declarative_base()
 
 
-class InstagramAccount(Base):
-    __tablename__ = 'instagram_account'
+class Application(Base):
+    __tablename__ = 'application'
     __table_args__ = {
         'mysql_charset': 'utf8'  # utf8mb4
     }
 
-    uid = Column(VARCHAR(25), primary_key=True)
+    id = Column(VARCHAR(25), autoincrement=True, primary_key=True)
     mid = Column(INTEGER, index=True)
     session_id = Column(VARCHAR(25))
 
