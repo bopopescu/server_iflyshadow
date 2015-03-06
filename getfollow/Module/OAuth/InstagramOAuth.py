@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 __author__ = 'sharp'
 import urllib
-import time
 
+import time
 import simplejson
 from httplib2 import Http
 from sqlalchemy.orm import sessionmaker
@@ -18,11 +18,18 @@ class InstagramOAuth(object):
             return Util.create_response(code=400, error='Error_request_method.')
 
         # server auth mode
+        print request.form
         if 'code' in request.form:
             print request.form.get('code')
             return InstagramOAuth.exchange_for_access_token()
         else:
-            print request.form
+            params_encrypted = request.form.get('params')
+            params_decrypted = Util.decrypt(params_encrypted)
+            print "1. params_encrypted = ",params_encrypted
+            print "2. params_decrypted = ", params_decrypted
+            content_json = simplejson.loads(params_decrypted, strict=False)
+            print content_json['sina.com'] ," ",content_json['test2']['foo']
+            return Util.create_response(data=params_decrypted)
 
 
     @staticmethod
