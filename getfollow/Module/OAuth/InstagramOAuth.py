@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 __author__ = 'sharp'
 import urllib
-
 import time
+
 import simplejson
 from httplib2 import Http
 from sqlalchemy.orm import sessionmaker
@@ -16,26 +16,23 @@ class InstagramOAuth(object):
     def process_oauth():
         if request.method != 'POST':
             return Util.create_response(code=400, error='Error_request_method.')
-
-        # server auth mode
-        print request.form
-        if 'code' in request.form:
-            print request.form.get('code')
-            return InstagramOAuth.exchange_for_access_token()
-        else:
-            params_encrypted = request.form.get('params')
-            params_decrypted = Util.decrypt(params_encrypted)
-            print "1. params_encrypted = ",params_encrypted
-            print "2. params_decrypted = ", params_decrypted
-            content_json = simplejson.loads(params_decrypted, strict=False)
-            print content_json['sina.com'] ," ",content_json['test2']['foo']
-            return Util.create_response(data=params_decrypted)
+        params_decrypted = Util.decrypt(request.form.get('data'))
+        content_json = simplejson.loads(params_decrypted, strict=False)
+        if 'data_info' in content_json:
+            if 'igm_code' in content_json['data_info']:
+                # server auth mode
+                igm_code = content_json['data_info']['igm_code']
+                print "igm_code:", igm_code
+                return InstagramOAuth.exchange_for_access_token(igm_code)
+            elif 'igm_access_token' in content_json['data_info']:
+                # client auth mode
+                igm_access_token = content_json['data_info']['igm_access_token']
+                print "igm_access_token:", igm_access_token
+                return Util.create_response(data=igm_access_token)
 
 
     @staticmethod
-    def exchange_for_access_token():
-        if request.method != 'POST':
-            return Util.create_response(code=400, error='Error_request_method.')
+    def exchange_for_access_token(igm_code):
         # # 1. get code error
         # error = request.args.get('error')
         # if error is not None:
@@ -46,14 +43,12 @@ class InstagramOAuth(object):
 
         # 2. get code && exchange access_token
 
-        code = request.form.get('code')
-
         client_params = {
             "client_id": GET_FOLLOW_CONFIG.CLIENT_ID,
             "client_secret": GET_FOLLOW_CONFIG.CLIENT_SECRET,
             "redirect_uri": GET_FOLLOW_CONFIG.REDIRECT_URI,
             "grant_type": GET_FOLLOW_CONFIG.GRANT_TYPE,
-            "code": code
+            "code": igm_code
         }
         data = urllib.urlencode(client_params)
         http_object = Http(disable_ssl_certificate_validation=True)
