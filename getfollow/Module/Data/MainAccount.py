@@ -11,3 +11,6 @@ class MainAccount(Base):
         'mysql_charset': 'utf8'  # utf8mb4
     }
     mid = Column(INTEGER, autoincrement=True, primary_key=True)
+    user_name = Column(NVARCHAR(25))
+    full_name = Column(NVARCHAR(25))
+    user_password = Column(VARCHAR(25))

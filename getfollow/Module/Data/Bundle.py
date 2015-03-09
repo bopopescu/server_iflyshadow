@@ -7,7 +7,7 @@ Base = declarative_base()
 
 
 class Bundle(Base):
-    __tablename__ = 'application'
+    __tablename__ = 'bundle'
     __table_args__ = {
         'mysql_charset': 'utf8'  # utf8mb4
     }
