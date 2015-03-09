@@ -3,14 +3,14 @@ import MySQLdb
 from getfollow.Module.Data.MainAccount import *
 from getfollow.Module.Data.Invoice import *
 from getfollow.Module.Data.Asset import *
-from getfollow.Module.Data.Bundle import *
+from getfollow.Module.Data.BundleUser import *
 from getfollow.Module.Data.Consume import *
 from getfollow.Module.Data.InstagramAccount import *
 from getfollow.Config.Consts import *
 
 
 MainAccount.metadata.create_all(MYSQL_ENGINE)
-Bundle.metadata.create_all(MYSQL_ENGINE)
+BundleUser.metadata.create_all(MYSQL_ENGINE)
 InstagramAccount.metadata.create_all(MYSQL_ENGINE)
 Invoice.metadata.create_all(MYSQL_ENGINE)
 Asset.metadata.create_all(MYSQL_ENGINE)

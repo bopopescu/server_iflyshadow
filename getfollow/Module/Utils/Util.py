@@ -4,9 +4,14 @@ from json import *
 
 from flask import *
 from Crypto.Cipher import AES
+import hashlib
+import uuid
 from getfollow.Config.Consts import *
 
+
 class Util(object):
+    CODE_SESSION_ID_IS_INVALID = 1001
+
     @staticmethod
     def create_response(code=200, data=None, error=None):
         response_dict = dict()
@@ -18,7 +23,7 @@ class Util(object):
             if data is not None:
                 try:
                     response_dict['data'] = JSONDecoder().decode(data)
-                except ValueError:
+                except Exception:
                     response_dict['data'] = data
         return make_response(jsonify(response_dict), code)
 
@@ -35,3 +40,10 @@ class Util(object):
         cipher = AES.new(SECURITY_CONFIG.AES_KEY)
         return unpad(cipher.decrypt(data.decode('hex')))
 
+    @staticmethod
+    def get_session_id():
+        return Util.md5(str(uuid.uuid1()))
+
+    @staticmethod
+    def md5(data):
+        return hashlib.md5(data).hexdigest()

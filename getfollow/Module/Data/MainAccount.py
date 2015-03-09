@@ -14,3 +14,4 @@ class MainAccount(Base):
     user_name = Column(NVARCHAR(25))
     full_name = Column(NVARCHAR(25))
     user_password = Column(VARCHAR(25))
+    create_time = Column(BIGINT) # datetime.datetime.fromtimestamp(1290068824)   get= int(time.time() * 1000)

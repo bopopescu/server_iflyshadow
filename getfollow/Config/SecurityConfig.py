@@ -34,7 +34,7 @@ class SecurityConfig():
 
     def set_config(self, data_map):
         print "Security Config ---"
-        print self.AES_KEY #*icanfly!(@*#&$^
+        print self.AES_KEY #*i?>xc)(:an^YWUD*^@*fly!(@*#&$^|
         self.AES_KEY = raw_input(self.KEY_AES_KEY + ":")
 
         if len(self.AES_KEY) > 0:

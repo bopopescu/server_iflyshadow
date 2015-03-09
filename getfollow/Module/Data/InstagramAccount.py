@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy.orm import sessionmaker
+import time
 
 from getfollow.Module.Data.MainAccount import *
-from getfollow.Module.Data.Bundle import *
+from getfollow.Module.Data.BundleUser import *
 from getfollow.Module.Utils.Util import *
 
 
@@ -33,45 +33,43 @@ class InstagramAccount(Base):
 
     # 50位:37004920.aa175a6.ab9dfbf920774ff9baa1413cf14ca91f
     access_token = Column(VARCHAR(70))
+    create_time = Column(BIGINT)
 
-    def save(self, access_token, insta_user_json):
-        # "data": {
-        # "id": "1574083",
-        # "username": "snoopdogg",
-        # "full_name": "Snoop Dogg",
-        # "profile_picture": "http://distillery.s3.amazonaws.com/profiles/profile_1574083_75sq_1295469061.jpg",
-        # "bio": "This is my bio",
-        # "website": "http://snoopdogg.com",
-        # "counts": {
-        # "media": 1320,
-        # "follows": 420,
-        # "followed_by": 3410
-        # }
-
+    def update_to_db(self, igm_user_json, access_token=None, igm_user=None, igm_password=None):
+        My_Session = sessionmaker(bind=MYSQL_ENGINE)
+        my_session = My_Session()
         try:
-            # 4.1 merge MainAccount or add
-            My_Session = sessionmaker(bind=MYSQL_ENGINE)
-            my_session = My_Session()
-            main_account = MainAccount(user_name=insta_user_json['username'],
-                                       full_name=insta_user_json['full_name'])
+            # 1 merge MainAccount or add
+            main_account = MainAccount(user_name=igm_user_json['username'],
+                                       full_name=igm_user_json['full_name'])
             insta_account_has_existed = my_session.query(InstagramAccount).filter(
-                InstagramAccount.uid == insta_user_json['id']).first()
+                InstagramAccount.uid == igm_user_json['id']).first()
             if insta_account_has_existed is not None:
                 main_account.mid = insta_account_has_existed.mid
+
                 my_session.merge(main_account)
             else:
+                main_account.create_time = int(time.time() * 1000)
                 my_session.add(main_account)
             my_session.commit()
 
-            # 4.1 merge MainAccount or add
-            insta_account = InstagramAccount(mid=main_account.mid, uid=insta_user_json['id'],
-                                             user_name=insta_user_json['username'],
-                                             full_name=insta_user_json['full_name'], bio=insta_user_json['bio'],
-                                             website=insta_user_json['website'],
-                                             profile_picture=insta_user_json['profile_picture'],
-                                             access_token=access_token)
-            if 'counts' in insta_user_json:
-                counts_json = insta_user_json['counts']
+            # 2 merge MainAccount or add
+            self.mid = main_account.mid
+            self.uid = igm_user_json['id']
+            self.user_name = igm_user_json['username']
+            self.full_name = igm_user_json['full_name']
+            self.bio = igm_user_json['bio']
+            self.website = igm_user_json['website']
+            self.profile_picture = igm_user_json['profile_picture']
+
+            if access_token is not None:
+                self.access_token = access_token
+            if igm_user is not None:
+                self.igm_user = igm_user
+            if igm_user is not None:
+                self.igm_password = igm_password
+            if 'counts' in igm_user_json:
+                counts_json = igm_user_json['counts']
                 if 'media' in counts_json:
                     self.media = counts_json['media']
                 if 'follows' in counts_json:
@@ -80,14 +78,27 @@ class InstagramAccount(Base):
                     self.followed_by = counts_json['followed_by']
 
             if insta_account_has_existed is not None:
-                my_session.merge(insta_account)
+                self.create_time = insta_account_has_existed.create_time
+                my_session.merge(self)
             else:
-                my_session.add(insta_account)
+                self.create_time = int(time.time() * 1000)
+                my_session.add(self)
             my_session.commit()
-            return Util.create_response(data=content)
+            return True, 200, ''
         except Exception, e:
-            err_info = "OAuth Error %s" % (e.args[0])
+            err_info = "Instagram account update Error %s" % (e.args[0])
             print(err_info)
-            return Util.create_response(code=512, error=err_info)
+            return False, 512, err_info
 
-
+            # "data": {
+            # "id": "1574083",
+            # "username": "snoopdogg",
+            # "full_name": "Snoop Dogg",
+            # "profile_picture": "http://distillery.s3.amazonaws.com/profiles/profile_1574083_75sq_1295469061.jpg",
+            # "bio": "This is my bio",
+            # "website": "http://snoopdogg.com",
+            # "counts": {
+            # "media": 1320,
+            # "follows": 420,
+            # "followed_by": 3410
+            # }

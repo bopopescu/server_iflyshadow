@@ -14,4 +14,4 @@ class Invoice(Base):
     mid = Column(INTEGER, index=True)
     invoice_type = Column(VARCHAR(25))
     amount = Column(DECIMAL(10, 2))
-    date_time = Column(BIGINT, index=True)
+    create_time = Column(BIGINT)

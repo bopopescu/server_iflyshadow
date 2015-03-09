@@ -16,6 +16,7 @@ class Asset(Base):
     type = Column(VARCHAR(25))
     amount = Column(DECIMAL(10, 2))
     expire_time = Column(BIGINT)
-    date_time = Column(BIGINT)
+    update_time = Column(BIGINT)
+    create_time = Column(BIGINT)
 
 

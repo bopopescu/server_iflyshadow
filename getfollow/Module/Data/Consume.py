@@ -15,4 +15,4 @@ class Consume(Base):
     consume_type = Column(VARCHAR(25))
     amount = Column(DECIMAL(10, 2))
     amount_left = Column(DECIMAL(10, 2))
-    date_time = Column(BIGINT, index=True)
+    create_time = Column(BIGINT)
