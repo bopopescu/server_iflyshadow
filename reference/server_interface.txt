@@ -55,6 +55,6 @@
 
 2. get premium user
 
-3. credit for user
+3. credit for user + -
 
 4.

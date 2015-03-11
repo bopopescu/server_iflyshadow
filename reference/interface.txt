@@ -34,6 +34,8 @@ AccessToken Response:
 test: http://127.0.0.1:5000/instagram/microfollow/oauth/?code=94df4f26719043e193e1854ba1be1ad7
 http://www.iflyshadow.com/instagram/microfollow/oauth/?code=94df4f26719043e193e1854ba1be1ad7
 
+https://api.instagram.com/v1/users/37004920/?access_token=37004920.aa175a6.ab9dfbf920774ff9baa1413cf14ca91f
+
 {
   "bundle_info" : {
     "mid":

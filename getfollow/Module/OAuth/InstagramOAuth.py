@@ -55,6 +55,7 @@ class InstagramOAuth(object):
 
         igm_json['session_id'] = bundle.session_id
         igm_json['server_time'] = int(time.time()*1000)
+        igm_json['mid'] = igm_account.mid
         print igm_json
         return Util.create_response(data=igm_json)
 
