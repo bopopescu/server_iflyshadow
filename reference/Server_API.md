@@ -1,6 +1,6 @@
 # Server API
 ## 1. Login:
-### Url:
+### URL:
 	/instagram/microfollow/oauth/
 ### Method:
 	POST
@@ -43,3 +43,38 @@
 	  },
 	  "code" : 200
 	}
+
+## 2. User Query:
+### URL:
+### Method:
+	GET
+### Input:
+### Output:
+
+## 3. Get Follow Users:
+### URL:
+### Method:
+	GET
+### Input:
+### Output:
+
+## 4. Follow:
+### URL:
+### Method:
+	POST
+### Input:
+### Output:
+
+## 5. Asset buy:
+### URL:
+### Method:
+	POST
+### Input:
+### Output:
+
+## 6. Asset query:
+### URL:
+### Method:
+	GET
+### Input:
+### Output:
