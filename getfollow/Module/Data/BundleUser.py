@@ -23,7 +23,6 @@ class BundleUser(Base):
     uid = Column(INTEGER, index=True)
     # 101:com.ideastray.GetFollow
     bundle_id = Column(INTEGER, index=True)
-
     session_id = Column(VARCHAR(50), index=True)
     # 65位:86969fbcd6f0914166e3fded2f3fb38c5215e9547ccc6cef3199d3b42cbac8bf
     device_token = Column(VARCHAR(100))

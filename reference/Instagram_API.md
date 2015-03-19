@@ -24,7 +24,6 @@
             }
     }
 ### 2. GET follows
-
 ---
 ##### Url:
 	https://api.instagram.com/v1/users/{user-id}/follows?access_token=ACCESS-TOKEN
@@ -48,7 +47,6 @@
 	    }]
 	}
 ### 3. GET followed-by
-
 ---
 ##### Url:
 	https://api.instagram.com/v1/users/{user-id}/followed-by?access_token=ACCESS-TOKEN
@@ -72,7 +70,6 @@
 	    }]
 	}
 ### 4. GET relationship
-
 ---
 ##### Url:
 	https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN
@@ -92,7 +89,6 @@
 	}
 	
 ### 5. POST relationship
-
 ---
 ##### Url:
 	https://api.instagram.com/v1/users/{user-id}/relationship?access_token=ACCESS-TOKEN
@@ -113,6 +109,3 @@
 	        "outgoing_status": "requested"
 	    }
 	}
-	
-
-
