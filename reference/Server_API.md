@@ -40,27 +40,10 @@
 	      "profile_picture" : "https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_37004920_75sq_1399257924.jpg",
 	      "website" : "http:\/\/test.com.cn",
 	      "bio" : "From\nTesr\nHaha"
-	    },
+	    }
 	  },
 	  "code" : 200
 	}
-{
-  "data" : {
-    "session_id" : "75353d98c19bce78a7ee1bb100170c4a",
-    "access_token" : "37004920.aa175a6.ab9dfbf920774ff9baa1413cf14ca91f",
-    "server_time" : 1426792661958
-    "user" : {
-      "username" : "sharpidea",
-      "full_name" : "JIABO",
-      "id" : "37004920",
-      "profile_picture" : "https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_37004920_75sq_1399257924.jpg",
-      "website" : "http:\/\/test.com.cn",
-      "bio" : "From\nTesr\nHaha"
-    },
-
-  },
-  "code" : 200
-}
 
 ## 2. User Query:
 ### URL:

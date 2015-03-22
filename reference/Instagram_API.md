@@ -10,18 +10,22 @@
 	users/{user-id}/?access_token=ACCESS-TOKEN
 ##### Output:
     {
-        "data": {
-            "id": "1574083",
-            "username": "snoopdogg",
-            "full_name": "Snoop Dogg",
-            "profile_picture": "http://distillery.s3.amazonaws.com/profiles/profile_1574083_75sq_1295469061.jpg",
-            "bio": "This is my bio",
-            "website": "http://snoopdogg.com",
-            "counts": {
-                "media": 1320,
-                "follows": 420,
-                "followed_by": 3410
-            }
+      "meta" : {
+        "code" : 200
+      },
+      "data" : {
+        "counts" : {
+          "media" : 86,
+          "follows" : 20,
+          "followed_by" : 93
+        },
+        "website" : "http:\/\/test.com.cn",
+        "id" : "37004920",
+        "bio" : "From\nTesr\nHaha",
+        "profile_picture" : "https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_37004920_75sq_1399257924.jpg",
+        "username" : "sharpidea",
+        "full_name" : "JIABO"
+      }
     }
 ### 2. GET follows
 ---

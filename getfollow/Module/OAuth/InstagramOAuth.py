@@ -8,6 +8,7 @@ from getfollow.Module.Data.InstagramAccount import *
 from getfollow.Module.Utils.Util import *
 import time
 
+
 class InstagramOAuth(object):
     @staticmethod
     def process_oauth():
@@ -54,7 +55,7 @@ class InstagramOAuth(object):
             return Util.create_response(code=code, error=error)
 
         igm_json['session_id'] = bundle.session_id
-        igm_json['server_time'] = int(time.time()*1000)
+        igm_json['server_time'] = int(time.time() * 1000)
         igm_json['mid'] = igm_account.mid
         print igm_json
         return Util.create_response(data=igm_json)
@@ -115,6 +116,6 @@ class InstagramOAuth(object):
         # "bio": "From\\nTesr\\nHaha",
         # "website": "http:\\/\\/test.com.cn",
         # "profile_picture": "https:\\/\\/instagramimages-a.akamaihd.net\\/profiles\\/profile_37004920_75sq_1399257924.jpg",
-        #     "full_name": "JIABO",
+        # "full_name": "JIABO",
         #     "id": "37004920"
         # }
